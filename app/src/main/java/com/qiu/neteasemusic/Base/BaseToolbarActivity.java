@@ -80,6 +80,7 @@ public abstract class BaseToolbarActivity extends AppCompatActivity implements V
         tintManager.setStatusBarTintEnabled(true);
         tintManager.setNavigationBarTintEnabled(true);
         tintManager.setTintColor(Color.TRANSPARENT);
+        tintManager.setStatusBarTintColor(Color.TRANSPARENT);
     }
     abstract protected void initView();
     abstract protected void initData();
