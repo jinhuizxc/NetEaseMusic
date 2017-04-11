@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.qiu.neteasemusic.R;
@@ -25,6 +26,7 @@ public abstract class BaseToolbarActivity extends AppCompatActivity implements V
         initStauteBar();
         initBase();
         initView();
+        initData();
 
     }
 
@@ -48,6 +50,7 @@ public abstract class BaseToolbarActivity extends AppCompatActivity implements V
                 onBackPressed();
             }
         });
+
     }
 
     /**
@@ -69,6 +72,7 @@ public abstract class BaseToolbarActivity extends AppCompatActivity implements V
         tintManager.setTintColor(Color.TRANSPARENT);
     }
     abstract protected void initView();
+    abstract protected void initData();
     abstract protected String getToolbarTitle();
     /**
      * Called when a view has been clicked.
@@ -78,6 +82,24 @@ public abstract class BaseToolbarActivity extends AppCompatActivity implements V
     @Override
     public void onClick(View v) {
 
+    }
+    protected void setStatusBarHide(boolean isHide){
+        if(isHide){
+            //取消状态栏
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }else{
+            //取消状态栏
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+                    WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+        }
+    }
+    protected void setToolbarHide(boolean isHide) {
+        if(isHide){
+            getSupportActionBar().hide();
+        }else{
+            getSupportActionBar().show();
+        }
     }
 
 }
