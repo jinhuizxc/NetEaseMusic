@@ -117,22 +117,29 @@ public class MainActivity extends BaseToolbarActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        int id =item.getItemId();
 
-       /* if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }*/
-
+        if (id == R.id.item_msg) {
+           ToastUtil.showToast(MainActivity.this,"我的消息");
+        } else if (id == R.id.item_store) {
+            ToastUtil.showToast(MainActivity.this,"积分商城");
+        } else if (id == R.id.item_member) {
+            ToastUtil.showToast(MainActivity.this,"付费音乐包");
+        }else if (id == R.id.item_free) {
+            ToastUtil.showToast(MainActivity.this,"在线听歌免流量");
+        }else if (id == R.id.item_identify) {
+            ToastUtil.showToast(MainActivity.this,"听歌识曲");
+        }else if (id == R.id.item_skin) {
+            ToastUtil.showToast(MainActivity.this,"主题换肤");
+        }else if (id == R.id.item_night) {
+            ToastUtil.showToast(MainActivity.this,"夜间模式");
+        }else if (id == R.id.item_time) {
+            ToastUtil.showToast(MainActivity.this,"定时停止播放");
+        }else if (id == R.id.item_clock) {
+            ToastUtil.showToast(MainActivity.this,"音乐闹钟");
+        }else if (id == R.id.item_cloud) {
+            ToastUtil.showToast(MainActivity.this,"我的音乐云盘");
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
