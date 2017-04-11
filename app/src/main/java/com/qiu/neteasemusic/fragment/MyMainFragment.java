@@ -1,11 +1,10 @@
 package com.qiu.neteasemusic.fragment;
 
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.framework.greendroid.pulltorefresh.PullToRefreshBase;
-import com.framework.greendroid.pulltorefresh.PullToRefreshListView;
 import com.qiu.neteasemusic.Adapter.MyMainFragmentAdapter;
 import com.qiu.neteasemusic.Base.AbstractBaseFragment;
 import com.qiu.neteasemusic.Bean.MyMainFragmentBean;
@@ -21,10 +20,11 @@ import java.util.List;
  */
 
 public class MyMainFragment  extends AbstractBaseFragment {
-    private PullToRefreshListView listView=null;
+    private ListView listView=null;
     private MyMainFragmentAdapter mAdapter=null;
     private List<MyMainFragmentBean> listdata=null;
     private MyMainFragmentBean mBean=null;
+    private SwipeRefreshLayout mySwipeRefreshLayout=null;
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment_my_main;
@@ -32,31 +32,31 @@ public class MyMainFragment  extends AbstractBaseFragment {
 
     @Override
     protected void initView(View v) {
-        listView = (PullToRefreshListView) v.findViewById(R.id.fragment_my_pullListView);
+        listView = (ListView) v.findViewById(R.id.fragment_my_pullListView);
+        mySwipeRefreshLayout= (SwipeRefreshLayout) v.findViewById(R.id.srl_main);
         listdata=new ArrayList<>();
         mAdapter=new MyMainFragmentAdapter(getContext(),listdata);
         listView.setAdapter(mAdapter);
-        listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
-            @Override
-            public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
-                ToastUtil.showToast(getContext(),"下拉");
-                listView.onRefreshComplete();
-            }
-
-            @Override
-            public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
-                ToastUtil.showToast(getContext(),"上啦");
-                listView.onRefreshComplete();
-            }
-        });
+        initSwipeRefreshLayout(mySwipeRefreshLayout);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ToastUtil.showToast(getContext(),position+"");
             }
         });
+        mySwipeRefreshLayout.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        // 刷新动画开始后回调到此方法
+                        ToastUtil.showToast(getContext(),"刷新");
+                        mySwipeRefreshLayout.setRefreshing(false);
+                    }
+                }
+        );
 
     }
+
     @Override
     protected void initData() {
         mBean=new MyMainFragmentBean();
