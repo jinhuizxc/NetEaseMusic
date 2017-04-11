@@ -3,9 +3,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:text="我的"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <com.framework.greendroid.pulltorefresh.PullToRefreshListView
+        android:id="@+id/fragment_my_pullListView"
+        style="@style/listview_style"
+        android:layout_width="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:listSelector="@android:color/transparent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

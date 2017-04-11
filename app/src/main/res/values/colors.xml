@@ -7,4 +7,8 @@
     <color name="text_color_white_FFFFFF">#ffffff</color>
     <color name="text_color_white_99FFFFFF">#99ffffff</color>
     <color name="text_color_gary_33000000">#33000000</color>
+    <color name="bg_color_FFFFFF">#FFFFFF</color>
+    <color name="bg_color_44FFFFFF">#44FFFFFF</color>
+    <color name="text_color_black_CC000000">#CC000000</color>
+    <color name="text_color_black_66000000">#66000000</color>
 </resources>
