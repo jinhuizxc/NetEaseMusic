@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.qiu.neteasemusic.Base.BaseToolbarActivity;
+import com.qiu.neteasemusic.Utils.ToastUtil;
 
 public class MainActivity extends BaseToolbarActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -67,7 +68,8 @@ public class MainActivity extends BaseToolbarActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_seach) {
+            ToastUtil.showToast(MainActivity.this,"点击搜索");
             return true;
         }
 

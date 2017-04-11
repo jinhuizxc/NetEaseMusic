@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NetEaseMusic.iml" filepath="$PROJECT_DIR$/NetEaseMusic.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameworkLibrary/frameworkLibrary.iml" filepath="$PROJECT_DIR$/frameworkLibrary/frameworkLibrary.iml" />
     </modules>
   </component>
 </project>
