@@ -13,4 +13,5 @@
     <dimen name="global_textview_size_16">16sp</dimen>
     <dimen name="global_padding_5">5dp</dimen>
     <dimen name="global_padding_3">3dp</dimen>
+    <dimen name="global_margin_50">50dp</dimen>
 </resources>
