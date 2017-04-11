@@ -5,4 +5,7 @@
     <string name="navigation_drawer_close">关闭 navigation drawer</string>
 
     <string name="action_settings">设置</string>
+    <string name="text_find">发现</string>
+    <string name="text_my">我的</string>
+    <string name="text_state">动态</string>
 </resources>

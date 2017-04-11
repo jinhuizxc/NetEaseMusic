@@ -40,7 +40,17 @@ public class MainActivity extends BaseToolbarActivity
 
     @Override
     protected String getToolbarTitle() {
-        return "网易云音乐";
+        return getResources().getString(R.string.text_find);
+    }
+
+    @Override
+    protected String getToolbarLeftTitle() {
+        return getResources().getString(R.string.text_my);
+    }
+
+    @Override
+    protected String getToolbarRightTitle() {
+        return getResources().getString(R.string.text_state);
     }
 
     @Override
@@ -103,6 +113,17 @@ public class MainActivity extends BaseToolbarActivity
     @Override
     protected boolean isDisplayHomeAsUpEnabled() {
         return false;
+    }
+
+    @Override
+    protected void clickTitle(int id) {
+        if(id==2){//发现
+            ToastUtil.showToast(MainActivity.this,"发现");
+        }else if(id==1){//我的
+            ToastUtil.showToast(MainActivity.this,"我的");
+        }else if(id==3){//动态
+            ToastUtil.showToast(MainActivity.this,"动态");
+        }
     }
 
 }
