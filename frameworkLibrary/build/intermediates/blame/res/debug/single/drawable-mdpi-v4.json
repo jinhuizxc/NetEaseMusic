@@ -164,12 +164,12 @@
         "source": "D:\\Work\\Android\\NetEaseMusic\\frameworkLibrary\\res\\drawable-mdpi\\spinner_7.png"
     },
     {
-        "merged": "D:\\Work\\Android\\NetEaseMusic\\frameworkLibrary\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\pull_spinner_2.png",
-        "source": "D:\\Work\\Android\\NetEaseMusic\\frameworkLibrary\\res\\drawable-mdpi\\pull_spinner_2.png"
-    },
-    {
         "merged": "D:\\Work\\Android\\NetEaseMusic\\frameworkLibrary\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
         "source": "D:\\Work\\Android\\NetEaseMusic\\frameworkLibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable-mdpi\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "D:\\Work\\Android\\NetEaseMusic\\frameworkLibrary\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\pull_spinner_2.png",
+        "source": "D:\\Work\\Android\\NetEaseMusic\\frameworkLibrary\\res\\drawable-mdpi\\pull_spinner_2.png"
     },
     {
         "merged": "D:\\Work\\Android\\NetEaseMusic\\frameworkLibrary\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\default_ptr_rotate.png",
