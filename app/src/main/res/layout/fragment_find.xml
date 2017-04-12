@@ -3,9 +3,85 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ImageView
+        android:layout_marginLeft="@dimen/global_padding_5"
+        android:src="@mipmap/logo"
+        android:layout_width="@dimen/global_iv_size_40"
+        android:layout_height="@dimen/global_iv_size_40" />
     <TextView
+
         android:text="find"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <LinearLayout
+        android:background="@color/bg_color_white_FEFEFE"
+        android:layout_weight="0.1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/global_padding_5"
+            android:src="@mipmap/logo"
+            android:layout_width="@dimen/global_iv_size_40"
+            android:layout_height="@dimen/global_iv_size_40" />
+        <LinearLayout
+            android:layout_marginLeft="@dimen/global_padding_10"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:textSize="@dimen/global_textview_size_13"
+                android:textColor="@color/text_color_black_AA000000"
+                android:text="孤儿仔"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="@dimen/global_padding_3"
+                android:textSize="@dimen/global_textview_size_12"
+                android:textColor="@color/text_color_gary_33000000"
+                android:text="陈奕迅/苦荣"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginLeft="@dimen/global_padding_5"
+                android:src="@mipmap/playbar_btn_playlist"
+                android:layout_width="@dimen/global_iv_size_40"
+                android:layout_height="@dimen/global_iv_size_40" />
+            <ImageView
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginLeft="@dimen/global_padding_5"
+                android:src="@mipmap/play_btn"
+                android:layout_width="@dimen/global_iv_size_40"
+                android:layout_height="@dimen/global_iv_size_40" />
+
+            <ImageView
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginLeft="@dimen/global_padding_5"
+                android:src="@mipmap/playbar_btn_next"
+                android:layout_width="@dimen/global_iv_size_40"
+                android:layout_height="@dimen/global_iv_size_40" />
+        </LinearLayout>
+
+        </LinearLayout>
+    <ProgressBar
+
+        android:max="100"
+        android:progress="20"
+        style="@style/ProgressBarHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </LinearLayout>

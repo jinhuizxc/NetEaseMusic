@@ -15,4 +15,7 @@
     <dimen name="global_padding_3">3dp</dimen>
     <dimen name="global_margin_50">50dp</dimen>
     <dimen name="padding_12">12dp</dimen>
+    <dimen name="global_textview_size_12">12sp</dimen>
+    <dimen name="global_textview_size_13">13sp</dimen>
+    <dimen name="global_iv_size_40">40dp</dimen>
 </resources>
