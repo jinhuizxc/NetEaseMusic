@@ -59,7 +59,7 @@ public class FindAnchorDJFragment extends AbstractBaseFragment
     }
 
     @Override
-    public void initViewsSetting(final View convertView, FindListViewAdapter.ViewHolder holder, int position) {
+    public void initGridViewsSetting(final View convertView, FindListViewAdapter.ViewHolder holder, int position) {
         FindListViewBean findListViewBean = mListdata.get(position);
         if(findListViewBean!=null){
             switch (findListViewBean.getItemType()){
@@ -71,6 +71,7 @@ public class FindAnchorDJFragment extends AbstractBaseFragment
             }
         }
     }
+
     private void initBannerEvent(Banner banner, final TextView tv_title) {
         banner.setOnBannerListener(new OnBannerListener() {
             @Override

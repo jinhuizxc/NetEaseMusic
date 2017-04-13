@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -52,6 +53,9 @@ public class FindListViewAdapter extends BaseAdapter {
             FindListViewBean findListViewBean = listdata.get(position);
             if(findListViewBean!=null){
                 switch (findListViewBean.getItemType()){
+                    case FindListViewBean.ITEM_TYPE_SPLIT_LINE://分割线
+                        convertView = LayoutInflater.from(context).inflate(R.layout.list_view_item_split_line, null);
+                        break;
                     case FindListViewBean.ITEM_TYPE_BANNER://轮播图
                         convertView = LayoutInflater.from(context).inflate(R.layout.list_view_item_banner, null);
                         holder.banner = (Banner) convertView.findViewById(R.id.banner_find);
@@ -64,6 +68,13 @@ public class FindListViewAdapter extends BaseAdapter {
                         holder.ll_hot= (LinearLayout) convertView.findViewById(R.id.ll_find_hot_song);
                         holder.tv_title= (TextView) convertView.findViewById(R.id.tv_find_date);
                         break;
+                    case FindListViewBean.ITEM_TYPE_GRID_GROOM://推荐歌单
+                        convertView = LayoutInflater.from(context).inflate(R.layout.list_view_item_grid, null);
+                        holder.gv_find= (GridView) convertView.findViewById(R.id.gv_find);
+                        holder.ll_fm= (LinearLayout) convertView.findViewById(R.id.ll_title_item);
+                        break;
+
+
                 }
 
             }
@@ -80,10 +91,13 @@ public class FindListViewAdapter extends BaseAdapter {
         if(findListViewBean!=null){
             switch (findListViewBean.getItemType()){
                 case FindListViewBean.ITEM_TYPE_BANNER://轮播图
-                    listener.initViewsSetting(convertView,holder,position);
+                    listener.initGridViewsSetting(convertView,holder,position);
                     break;
                 case FindListViewBean.ITEM_TYPE_PRIVATE_GROOM://私人推荐
-                    listener.initViewsSetting(convertView,holder,position);
+                    listener.initGridViewsSetting(convertView,holder,position);
+                    break;
+                case FindListViewBean.ITEM_TYPE_GRID_GROOM://推荐歌单
+                    listener.initGridViewsSetting(convertView,holder,position);
                     break;
             }
         }
@@ -93,6 +107,8 @@ public class FindListViewAdapter extends BaseAdapter {
          public Banner banner;
          public TextView tv_title;
          public LinearLayout ll_fm,ll_day,ll_hot;
+         public GridView gv_find;
+
 
     }
     public void refresh(List<FindListViewBean> list){

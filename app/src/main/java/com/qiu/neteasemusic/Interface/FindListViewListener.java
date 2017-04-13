@@ -12,5 +12,5 @@ public interface FindListViewListener {
     /**
      * 用来初始化界面设置
      * */
-    void initViewsSetting(View convertView, FindListViewAdapter.ViewHolder holder, int position);
+    void initGridViewsSetting(View convertView, FindListViewAdapter.ViewHolder holder, int position);
 }
