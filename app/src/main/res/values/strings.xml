@@ -14,4 +14,6 @@
     <string name="text_find_song_list">歌单</string>
     <string name="text_find_anchor_dj">主播电台</string>
     <string name="text_find_ranking_list">排行榜</string>
+    <string name="btn_text_find_banner_pop">推广</string>
+    <string name="btn_text_find_banner_visit">独家专访</string>
 </resources>

@@ -20,4 +20,11 @@
     <dimen name="global_iv_size_40">40dp</dimen>
     <dimen name="global_padding_50">50dp</dimen>
     <dimen name="find_sliding_tab_layout_height_40">40dp</dimen>
+    <dimen name="nav_header_main_height_ll">180dp</dimen>
+    <dimen name="banner_height_150">150dp</dimen>
+    <dimen name="global_margin_3">3dp</dimen>
+    <dimen name="global_margin_5">5dp</dimen>
+    <dimen name="global_padding_8">8dp</dimen>
+    <dimen name="global_padding_15">15dp</dimen>
+    <dimen name="global_textview_size_11">11sp</dimen>
 </resources>
