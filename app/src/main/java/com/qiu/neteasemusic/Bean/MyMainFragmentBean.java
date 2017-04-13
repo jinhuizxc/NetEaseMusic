@@ -47,4 +47,6 @@ public class MyMainFragmentBean extends BaseBean{
     public void setItemIco(int itemIco) {
         this.itemIco = itemIco;
     }
+
+
 }

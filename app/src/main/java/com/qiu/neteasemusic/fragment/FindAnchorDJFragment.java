@@ -3,9 +3,13 @@ package com.qiu.neteasemusic.fragment;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.qiu.neteasemusic.Adapter.FindListViewAdapter;
 import com.qiu.neteasemusic.Base.AbstractBaseFragment;
+import com.qiu.neteasemusic.Bean.FindListViewBean;
+import com.qiu.neteasemusic.Interface.FindListViewListener;
 import com.qiu.neteasemusic.R;
 import com.qiu.neteasemusic.Utils.GlideImageLoader;
 import com.qiu.neteasemusic.Utils.ToastUtil;
@@ -19,11 +23,14 @@ import java.util.List;
  * Created by qiu on 2017/4/13.
  */
 
-public class FindAnchorDJFragment extends AbstractBaseFragment implements View.OnClickListener {
-    private Banner mBanner;
+public class FindAnchorDJFragment extends AbstractBaseFragment
+        implements FindListViewListener,View.OnClickListener {
     private Context context;
-    private List<Integer> imagesList;
-    private TextView tv_detail;
+    private ListView mListView;
+    private List<Integer> mImagesList;
+    private FindListViewAdapter mAdapter;
+    private List<FindListViewBean> mListdata;
+    private FindListViewBean mBean =null;
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment_find_ganchor_dj;
@@ -32,49 +39,70 @@ public class FindAnchorDJFragment extends AbstractBaseFragment implements View.O
     @Override
     protected void initView(View v) {
         context=getContext();
-        mBanner = (Banner) v.findViewById(R.id.banner_find_dj);
-        tv_detail= (TextView) v.findViewById(R.id.tv_detail);
-        imagesList= new ArrayList<>();
-        imagesList.add(R.mipmap.second);
-        imagesList.add(R.mipmap.seven);
-        tv_detail.setOnClickListener(this);
-        mBanner.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mImagesList =new ArrayList<>();
+        mListView = (ListView) v.findViewById(R.id.lv_find);
+        mListdata =new ArrayList<>();
+        mAdapter =new FindListViewAdapter(context, mListdata,this);
+        mListView.setAdapter(mAdapter);
+        mImagesList = new ArrayList<>();
+        mImagesList.add(R.mipmap.second);
+        mImagesList.add(R.mipmap.seven);
+    }
+
+    @Override
+    protected void initData() {
+        mBean = new FindListViewBean();
+        mBean.setItemType(FindListViewBean.ITEM_TYPE_BANNER);//轮播图
+        mListdata.add(mBean);
+
+        mAdapter.refresh(mListdata);
+    }
+
+    @Override
+    public void initViewsSetting(final View convertView, FindListViewAdapter.ViewHolder holder, int position) {
+        FindListViewBean findListViewBean = mListdata.get(position);
+        if(findListViewBean!=null){
+            switch (findListViewBean.getItemType()){
+                case FindListViewBean.ITEM_TYPE_BANNER://轮播图
+                    initBannerViews(holder.banner,holder.tv_title);
+                    holder.tv_title.setOnClickListener(this);
+                    initBannerEvent(holder.banner,holder.tv_title);
+                    break;
+            }
+        }
+    }
+    private void initBannerEvent(Banner banner, final TextView tv_title) {
+        banner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                ToastUtil.showToast(context,"点击了="+position);
+            }
+        });
+        banner.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
                 if(position==1){
-                    tv_detail.setText("电台");
+                    tv_title.setText("电台");
                 }else{
-                    tv_detail.setText("电台节目");
+                    tv_title.setText("电台节目");
                 }
             }
+            @Override
+            public void onPageSelected(int position) {
 
+            }
             @Override
             public void onPageScrollStateChanged(int state) {
 
             }
         });
-        mBanner.setOnBannerListener(new OnBannerListener() {
-            @Override
-            public void OnBannerClick(int position) {
-
-                ToastUtil.showToast(context,"点击了="+position);
-            }
-        });
     }
 
-    @Override
-    protected void initData() {
-        mBanner.setImageLoader(new GlideImageLoader());
-        mBanner.setImages(imagesList);
-        //设置轮播时间
-        mBanner.setDelayTime(4000);
-        //banner设置方法全部调用完毕时最后调用
-        mBanner.start();
+    private void initBannerViews(Banner banner, final TextView tv_title) {
+        banner.setImageLoader(new GlideImageLoader());
+        banner.setImages(mImagesList);
+        banner.setDelayTime(4000);
+        banner.start();
     }
 
     @Override
