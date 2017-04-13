@@ -59,26 +59,42 @@ public class MyMainFragment  extends AbstractBaseFragment {
 
     @Override
     protected void initData() {
+
         mBean=new MyMainFragmentBean();
+        mBean.setItemType(mBean.ITEM_TYPE_LOCAL_MUSIC);
+        mBean.setItemIco(R.mipmap.local_music);
         mBean.setItemName("本地音乐");
-        mBean.setItemNumName("(455)");
+        mBean.setItemNumName("(0)");
         listdata.add(mBean);
 
         mBean=new MyMainFragmentBean();
-        mBean.setItemName("本地音乐");
-        mBean.setItemNumName("(455)");
+        mBean.setItemType(mBean.ITEM_TYPE_LATELY_PLAY);
+        mBean.setItemIco(R.mipmap.actionbar_discover_normal);
+        mBean.setItemName("最近播放");
+        mBean.setItemNumName("(0)");
         listdata.add(mBean);
 
         mBean=new MyMainFragmentBean();
-        mBean.setItemName("本地音乐");
-        mBean.setItemNumName("(455)");
+        mBean.setItemType(mBean.ITEM_TYPE_DOWNLOAD);
+        mBean.setItemIco(R.mipmap.music_icn_dld);
+        mBean.setItemName("下载管理");
+        mBean.setItemNumName("(0)");
         listdata.add(mBean);
 
         mBean=new MyMainFragmentBean();
-        mBean.setItemName("本地音乐");
-        mBean.setItemNumName("(455)");
+        mBean.setItemType(mBean.ITEM_TYPE_DJ);
+        mBean.setItemIco(R.mipmap.music_icn_dj);
+        mBean.setItemName("我的电台");
+        mBean.setItemNumName("(0)");
         listdata.add(mBean);
+
+        mBean=new MyMainFragmentBean();
+        mBean.setItemType(mBean.ITEM_TYPE_COLLECT);
+        mBean.setItemIco(R.mipmap.actionbar_friends_normal);
+        mBean.setItemName("我的收藏");
+        mBean.setItemNumName("(0)");
+        listdata.add(mBean);
+
         mAdapter.refresh(listdata);
-
     }
 }

@@ -62,6 +62,7 @@ public class MyMainFragmentAdapter extends BaseAdapter {
         if(bean!=null){
             holder.tv_title.setText(bean.getItemName());
             holder.tv_num.setText(bean.getItemNumName());
+            holder.iv_ico.setImageResource(bean.getItemIco());
 
         }
         if(listData.size()-1==position){

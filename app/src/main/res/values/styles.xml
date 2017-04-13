@@ -19,7 +19,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:divider">@null</item>
-        <item name="android:scrollbars">none</item>
+        <item name="android:scrollbars">vertical</item>
         <item name="android:listSelector">@android:color/transparent</item>
     </style>
 

@@ -16,8 +16,8 @@
 
                 android:src="@mipmap/actionbar_discover_normal"
                 android:id="@+id/iv_ico"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/global_padding_50"
+                android:layout_height="@dimen/global_padding_50"
                 />
             <LinearLayout
                 android:weightSum="1"
