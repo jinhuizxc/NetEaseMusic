@@ -19,4 +19,5 @@
     <dimen name="global_textview_size_13">13sp</dimen>
     <dimen name="global_iv_size_40">40dp</dimen>
     <dimen name="global_padding_50">50dp</dimen>
+    <dimen name="find_sliding_tab_layout_height_40">40dp</dimen>
 </resources>

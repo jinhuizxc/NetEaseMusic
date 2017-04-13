@@ -10,4 +10,8 @@
     <string name="text_state">动态</string>
     <string name="text_night_mode">夜间模式</string>
     <string name="local_music">本地音乐</string>
+    <string name="text_find_person_groom">个性推荐</string>
+    <string name="text_find_song_list">歌单</string>
+    <string name="text_find_anchor_dj">主播电台</string>
+    <string name="text_find_ranking_list">排行榜</string>
 </resources>
