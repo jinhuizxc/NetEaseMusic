@@ -10,6 +10,7 @@ public class FindListViewBean extends BaseBean {
     private int itemType;
 
     public static final int ITEM_TYPE_BANNER=1;//轮播图
+    public static final int ITEM_TYPE_PRIVATE_GROOM=2;//私人推荐
 
 
     public int getItemType() {

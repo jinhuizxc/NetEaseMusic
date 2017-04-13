@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.qiu.neteasemusic.Bean.FindListViewBean;
@@ -54,7 +55,14 @@ public class FindListViewAdapter extends BaseAdapter {
                     case FindListViewBean.ITEM_TYPE_BANNER://轮播图
                         convertView = LayoutInflater.from(context).inflate(R.layout.list_view_item_banner, null);
                         holder.banner = (Banner) convertView.findViewById(R.id.banner_find);
-                        holder.tv_title= (TextView) convertView.findViewById(R.id.tv_detail);
+                        holder.tv_title= (TextView) convertView.findViewById(R.id.tv_banner_detail);
+                        break;
+                    case FindListViewBean.ITEM_TYPE_PRIVATE_GROOM://私人推荐
+                        convertView = LayoutInflater.from(context).inflate(R.layout.list_view_item_find_person_groom, null);
+                        holder.ll_fm= (LinearLayout) convertView.findViewById(R.id.ll_find_fm);
+                        holder.ll_day= (LinearLayout) convertView.findViewById(R.id.ll_find_day_song);
+                        holder.ll_hot= (LinearLayout) convertView.findViewById(R.id.ll_find_hot_song);
+                        holder.tv_title= (TextView) convertView.findViewById(R.id.tv_find_date);
                         break;
                 }
 
@@ -74,6 +82,9 @@ public class FindListViewAdapter extends BaseAdapter {
                 case FindListViewBean.ITEM_TYPE_BANNER://轮播图
                     listener.initViewsSetting(convertView,holder,position);
                     break;
+                case FindListViewBean.ITEM_TYPE_PRIVATE_GROOM://私人推荐
+                    listener.initViewsSetting(convertView,holder,position);
+                    break;
             }
         }
     }
@@ -81,6 +92,7 @@ public class FindListViewAdapter extends BaseAdapter {
     public final class ViewHolder {
          public Banner banner;
          public TextView tv_title;
+         public LinearLayout ll_fm,ll_day,ll_hot;
 
     }
     public void refresh(List<FindListViewBean> list){

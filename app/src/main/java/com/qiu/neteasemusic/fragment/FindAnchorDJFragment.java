@@ -108,7 +108,7 @@ public class FindAnchorDJFragment extends AbstractBaseFragment
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if(id==R.id.tv_detail){
+        if(id==R.id.tv_banner_detail){
             ToastUtil.showToast(context,"独家专访");
         }
     }

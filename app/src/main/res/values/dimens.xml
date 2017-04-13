@@ -27,4 +27,5 @@
     <dimen name="global_padding_8">8dp</dimen>
     <dimen name="global_padding_15">15dp</dimen>
     <dimen name="global_textview_size_11">11sp</dimen>
+    <dimen name="tv_find_person_height_60">60dp</dimen>
 </resources>

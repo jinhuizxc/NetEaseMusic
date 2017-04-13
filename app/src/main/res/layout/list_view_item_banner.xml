@@ -12,7 +12,7 @@
             android:focusable="true"
             android:layout_marginBottom="@dimen/global_margin_5"
             android:layout_gravity="right|bottom"
-            android:id="@+id/tv_detail"
+            android:id="@+id/tv_banner_detail"
             android:background="@drawable/shape_btn_find_banner"
             android:text="@string/btn_text_find_banner_visit"
             android:textSize="@dimen/global_textview_size_11"

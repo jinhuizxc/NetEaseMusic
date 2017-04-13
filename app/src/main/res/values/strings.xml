@@ -16,4 +16,7 @@
     <string name="text_find_ranking_list">排行榜</string>
     <string name="btn_text_find_banner_pop">推广</string>
     <string name="btn_text_find_banner_visit">独家专访</string>
+    <string name="tv_find_person_private_fm">私人FM</string>
+    <string name="tv_find_person_day_song">每日歌曲推荐</string>
+    <string name="tv_find_person_hot_song">云音乐热歌榜</string>
 </resources>

@@ -59,6 +59,10 @@ public class FindGroomFragment extends AbstractBaseFragment
         mBean.setItemType(FindListViewBean.ITEM_TYPE_BANNER);//轮播图
         mListdata.add(mBean);
 
+        mBean = new FindListViewBean();
+        mBean.setItemType(FindListViewBean.ITEM_TYPE_PRIVATE_GROOM);//个人推荐
+        mListdata.add(mBean);
+
         mAdapter.refresh(mListdata);
 
     }
@@ -72,6 +76,12 @@ public class FindGroomFragment extends AbstractBaseFragment
                     initBannerViews(holder.banner,holder.tv_title);
                     holder.tv_title.setOnClickListener(this);
                     initBannerEvent(holder.banner,holder.tv_title);
+                    break;
+                case FindListViewBean.ITEM_TYPE_PRIVATE_GROOM://私人推荐
+                    holder.tv_title.setText("15");
+                    holder.ll_fm.setOnClickListener(this);
+                    holder.ll_day.setOnClickListener(this);
+                    holder.ll_hot.setOnClickListener(this);
                     break;
             }
         }
@@ -114,8 +124,14 @@ public class FindGroomFragment extends AbstractBaseFragment
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if(id==R.id.tv_detail){
+        if(id==R.id.tv_banner_detail){
             ToastUtil.showToast(context,"独家专访");
+        }else if(id==R.id.ll_find_fm){
+            ToastUtil.showToast(context,"私人FM");
+        }else if(id==R.id.ll_find_day_song){
+            ToastUtil.showToast(context,"每日歌曲推荐");
+        }else if(id==R.id.ll_find_hot_song){
+            ToastUtil.showToast(context,"云音乐热歌榜");
         }
     }
 }
